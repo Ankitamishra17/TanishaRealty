@@ -84,7 +84,7 @@ export default function Gallery() {
           Properties
         </motion.h3>
         <motion.div
-          className="w-24 h-[2px] bg-[#163250] mx-auto mt-4"
+          className="w-24 h-[2px] bg-[#C6A240] mx-auto mt-4"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}

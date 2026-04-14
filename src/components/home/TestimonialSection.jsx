@@ -2,12 +2,12 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Libre_Baskerville, Poppins } from "next/font/google";
+import { Poppins, Libre_Baskerville } from "next/font/google";
 
 const libre = Libre_Baskerville({ weight: "400", subsets: ["latin"] });
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "600"] });
 
-const detail = [
+const testimonials = [
   {
     id: 1,
     name: "Rahul Sharma",
@@ -23,22 +23,25 @@ const detail = [
   {
     id: 3,
     name: "Priya Verma",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    image: "https://randomuser.me/api/portraits/women/65.jpg",
     text: "They delivered exactly what I wanted. Fantastic work!",
   },
   {
     id: 4,
-    name: "Shushmita Bedi",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    name: "Aman Gupta",
+    image: "https://randomuser.me/api/portraits/men/12.jpg",
     text: "Very smooth process and great communication.",
   },
 ];
 
-export default function TestimonialSection() {
+// seamless loop
+const looped = [...testimonials, ...testimonials];
+
+export default function TestimonialCarousel() {
   return (
-    <section className="bg-gray-100 py-16 px-6">
-      {/* Heading */}
-      <div className="text-center mb-12">
+    <section className="py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+      {/* ================= HEADING ================= */}
+      <div className="text-center mb-10 md:mb-14">
         <motion.h3
           className={`${libre.className} text-3xl md:text-4xl lg:text-5xl text-[#163250]`}
           initial={{ opacity: 0, y: 40 }}
@@ -46,50 +49,75 @@ export default function TestimonialSection() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          Testimonial
+          Testimonials
         </motion.h3>
+
         <motion.div
-          className="w-24 h-[2px] bg-[#163250] mx-auto mt-4"
+          className="w-20 md:w-24 h-[2px] bg-[#C6A240] mx-auto mt-4"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
           style={{ originX: 0.5 }}
           viewport={{ once: true }}
         />
+
+        <p className={`${poppins.className} text-gray-500 mt-4`}>
+          Real feedback from our happy clients
+        </p>
       </div>
 
-      {/* Cards */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {detail.map((item, index) => (
-          <motion.div
-            key={item.id}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.2, duration: 0.6 }}
-            viewport={{ once: true }}
-            className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 text-center border border-[#C6A240]/30 hover:shadow-xl hover:scale-105 transition"
-          >
-            {/* Image */}
-            <div className="w-20 h-20 mx-auto mb-4 relative">
-              <Image
-                src={item.image}
-                alt={item.name}
-                fill
-                className="rounded-full object-cover border-2 "
-              />
+      {/*  CAROUSEL  */}
+      <div className="relative w-full overflow-hidden">
+        <motion.div
+          className="flex gap-6 w-max"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            duration: 20,
+            ease: "linear",
+            repeat: Infinity,
+          }}
+        >
+          {looped.map((item, index) => (
+            <div
+              key={index}
+              className="w-[300px] md:w-[350px] flex-shrink-0 rounded-2xl p-6
+              bg-white/70 backdrop-blur-xl border border-[#163250]/10
+              shadow-md hover:shadow-xl transition-all duration-300"
+            >
+              {/* Quote */}
+              <div className="text-[#C6A240] text-3xl mb-3">“</div>
+
+              {/* Text */}
+              <p
+                className={`${poppins.className} text-[#163250] text-sm mb-6 leading-relaxed`}
+              >
+                {item.text}
+              </p>
+
+              {/* User */}
+              <div className="flex items-center gap-3">
+                <div className="relative w-10 h-10">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    fill
+                    className="rounded-full object-cover border-2 border-[#C6A240]"
+                  />
+                </div>
+
+                <div>
+                  <h4 className="text-sm font-semibold text-[#163250]">
+                    {item.name}
+                  </h4>
+                  <p className="text-xs text-gray-500">Verified Client</p>
+                </div>
+              </div>
+
+              {/* Accent line */}
+              <div className="mt-5 h-[2px] w-10 bg-[#C6A240]/60 rounded-full" />
             </div>
-
-            {/* Text */}
-            <p className={`${poppins.className} text-sm text-[#163250] mb-4`}>
-              "{item.text}"
-            </p>
-
-            {/* Name */}
-            <h4 className={`${poppins.className} text-[#C6A240] font-semibold`}>
-              {item.name}
-            </h4>
-          </motion.div>
-        ))}
+          ))}
+        </motion.div>
       </div>
     </section>
   );

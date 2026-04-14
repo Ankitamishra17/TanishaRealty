@@ -52,7 +52,7 @@ export default function BlogPage() {
         </motion.h3>
 
         <motion.div
-          className="w-20 md:w-24 h-[2px] bg-[#163250] mx-auto mt-3 md:mt-4 mb-6 md:mb-12"
+          className="w-20 md:w-24 h-[2px] bg-[#C6A240] mx-auto mt-3 md:mt-4 mb-6 md:mb-12"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
