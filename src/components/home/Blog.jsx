@@ -37,12 +37,12 @@ export default function BlogPage() {
   return (
     <section
       id="blog"
-      className="bg-[#F8F8F8] min-h-screen lg:py-16 lg:px-10  px-4 md:px-8 sm:py-20 md:py-24 scroll-mt-24"
+      className="bg-[#F8F8F8] min-h-screen lg:py-8 lg:px-10  px-4 md:px-8 sm:py-20 md:py-24 scroll-mt-24"
     >
       {/* Heading */}
-      <div className="text-center mb-12 ">
+      <div className="text-center lg:mb-12 sm:mb-8 ">
         <motion.h3
-          className={`${libre.className} text-3xl md:text-4xl lg:text-5xl text-[#163250]`}
+          className={`${libre.className} text-3xl md:text-4xl lg:text-5xl text-[#163250]  sm:mt-20`}
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -52,7 +52,7 @@ export default function BlogPage() {
         </motion.h3>
 
         <motion.div
-          className="w-24 h-[2px] bg-[#163250] mx-auto mt-4"
+          className="w-24 h-[2px] bg-[#163250] mx-auto mt-4 mb-[35px] sm:mb-14"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
