@@ -40,7 +40,7 @@ export default function BlogPage() {
       className="bg-[#F8F8F8] min-h-screen px-6 py-20 scroll-mt-24"
     >
       {/* Heading */}
-      <div className="text-center mb-8">
+      <div className="text-center mb-12 ">
         <motion.h3
           className={`${libre.className} text-3xl md:text-4xl lg:text-5xl text-[#163250]`}
           initial={{ opacity: 0, y: 40 }}
