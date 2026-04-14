@@ -55,7 +55,9 @@ export default function Navbar() {
 
         {/* DESKTOP MENU */}
         <div>
-          <nav className=" hidden md:flex gap-6 md:gap-4 md:ml-14 lg:gap-8 text-[#163250] font-medium">
+          <nav
+            className={` ${libre.className} hidden md:flex gap-6 md:gap-4 md:ml-14 lg:gap-8 text-[#163250] font-medium`}
+          >
             {menuItems.map((item) => (
               <a
                 key={item.name}
@@ -70,7 +72,7 @@ export default function Navbar() {
         </div>
 
         {/* RIGHT SIDE */}
-        <div className="flex items-center gap-3 sm:gap-4">
+        <div className={` ${libre.className} flex items-center gap-3 sm:gap-4`}>
           {/* BUTTON */}
           <a
             href="#contact"

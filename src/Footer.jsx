@@ -50,14 +50,6 @@ export default function Footer() {
             </a>
 
             <p
-              className={
-                " ${poppins.className}italic text-[#163250]/50 text-sm tracking-wider mb-5"
-              }
-            >
-              Est. 2024
-            </p>
-
-            <p
               className={`${poppins.className}text-[#163250]/70 text-sm leading-relaxed`}
             >
               Crafting refined experiences for those who appreciate the
@@ -130,10 +122,11 @@ export default function Footer() {
             <div
               className={`${poppins.className}  space-y-2 mb-6 text-sm text-[#163250]/70`}
             >
-              <p className={`${poppins.className}`} >hello@luxe.studio</p>
+              <p className={`${poppins.className}`}>hello@luxe.studio</p>
               <p>+1 (800) 123-4567</p>
               <p className={`${poppins.className}`}>
-                New York, NY 10001 <br /> United States
+                1818,Galaxy Diamond Plazza
+                <br /> Greater Noida
               </p>
             </div>
 

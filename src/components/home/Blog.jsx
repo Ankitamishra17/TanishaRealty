@@ -11,7 +11,7 @@ const blogs = [
     id: 1,
     title: "How Studio Living is Redefining Luxury in Noida",
     category: "DESIGN",
-    date: "Mar 5, 2026",
+    date: "April 4, 2026",
     image: "https://pvr-real-state.vercel.app/img/im2.jpeg",
     desc: "Minimalist studio apartments along Noida Expressway are merging raw aesthetics with comfort.",
   },
@@ -19,7 +19,7 @@ const blogs = [
     id: 2,
     title: "The Rise of Weekend Farmhouse Culture",
     category: "FARMHOUSE",
-    date: "Feb 18, 2026",
+    date: "April 15, 2026",
     image: "https://pvr-real-state.vercel.app/img/im1.jpeg",
     desc: "Farm retreats with open courtyards are redefining urban escape.",
   },
@@ -27,7 +27,7 @@ const blogs = [
     id: 3,
     title: "Why Yamuna Expressway Is NCR’s Biggest Bet",
     category: "INVESTMENT",
-    date: "Feb 1, 2026",
+    date: "April 1, 2026",
     image: "https://pvr-real-state.vercel.app/img/im3.jpeg",
     desc: "Proximity to Jewar Airport makes this the hottest corridor.",
   },
@@ -37,7 +37,7 @@ export default function BlogPage() {
   return (
     <section
       id="blog"
-      className="bg-[#F8F8F8] min-h-screen py-16 sm:py-20 md:py-24 scroll-mt-24"
+      className="bg-[#F8F8F8] min-h-screen lg:py-16 lg:px-10  px-4 md:px-8 sm:py-20 md:py-24 scroll-mt-24"
     >
       {/* Heading */}
       <div className="text-center mb-12 ">

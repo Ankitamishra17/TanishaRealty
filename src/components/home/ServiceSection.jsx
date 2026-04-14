@@ -100,12 +100,12 @@ export default function ServiceSection() {
               <h3 className="text-xl font-semibold mb-2 text-[#c6a240]">
                 {item.title}
               </h3>
-
+              <p>{item.desc}</p>
               <p className="text-sm opacity-100 sm:opacity-0 sm:translate-y-4 sm:group-hover:opacity-100 sm:group-hover:translate-y-0 transition duration-300">
-                {item.desc}
+                <div className="w-10 group-hover:w-20 h-[2px] bg-[#c6a240] mt-3 transition-all duration-300" />
               </p>
 
-              <div className="w-10 group-hover:w-20 h-[2px] bg-[#c6a240] mt-3 transition-all duration-300" />
+              {/* <div className="w-10 group-hover:w-20 h-[2px] bg-[#c6a240] mt-3 transition-all duration-300" /> */}
             </div>
           </div>
         ))}

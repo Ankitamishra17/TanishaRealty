@@ -93,15 +93,21 @@ export default function HeroSection() {
               initial="hidden"
               animate="visible"
               custom={3}
-              className="mt-2 flex flex-col sm:flex-row gap-4"
+              className="mt-2  lg:mt-8 flex flex-col sm:flex-row gap-4"
             >
-              <button className="bg-[#C6A240] text-black px-1 py-3 rounded-md font-semibold hover:bg-[#b8932f] transition">
+              <a
+                href="#service"
+                className=" bg-[#C6A240] text-black px-7 py-3 rounded-md font-semibold hover:bg-[#b8932f] transition"
+              >
                 Explore Services →
-              </button>
+              </a>
 
-              <button className="border border-white text-white px-7 py-3 rounded-md hover:bg-white hover:text-black transition">
+              <a
+                href="#properties"
+                className="border border-white text-white px-7 py-3 rounded-md hover:bg-white hover:text-black transition"
+              >
                 Explore Properties →
-              </button>
+              </a>
             </motion.div>
           </div>
 

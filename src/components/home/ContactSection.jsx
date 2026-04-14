@@ -112,7 +112,7 @@ export default function ContactSection() {
           {/* OVERLAY */}
           <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300">
             {/* LET'S TALK TEXT */}
-            <h4 className="absolute bottom-28 sm:bottom-32 md:bottom-36 left-4 sm:left-6 text-[#c6a240] text-2xl sm:text-3xl md:text-5xl font-bold tracking-wide">
+            <h4 className="absolute bottom-28 sm:bottom-32 md:bottom-36 left-4 sm:left-6 text-[#163250] text-2xl sm:text-3xl md:text-5xl font-bold tracking-wide">
               Let’s Talk
             </h4>
           </div>
