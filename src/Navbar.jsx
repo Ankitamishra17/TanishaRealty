@@ -55,7 +55,7 @@ export default function Navbar() {
 
         {/* DESKTOP MENU */}
         <div>
-          <nav className=" hidden md:flex gap-6 lg:gap-8 text-[#163250] font-medium">
+          <nav className=" hidden md:flex gap-6 md:gap-4 md:ml-14 lg:gap-8 text-[#163250] font-medium">
             {menuItems.map((item) => (
               <a
                 key={item.name}
@@ -76,7 +76,7 @@ export default function Navbar() {
             href="#contact"
             className="hidden sm:block text-[#163250] border border-[#C6A240] px-4 py-2 rounded-xl hover:bg-[#C6A240] hover:text-white transition"
           >
-           Enquire Now
+            Enquire Now
           </a>
 
           {/* HAMBURGER */}
