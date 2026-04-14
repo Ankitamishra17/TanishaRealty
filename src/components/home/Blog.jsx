@@ -37,7 +37,7 @@ export default function BlogPage() {
   return (
     <section
       id="blog"
-      className="bg-[#F8F8F8] min-h-screen lg:py-16 lg:px-10  px-4 md:px-8 sm:py-20 md:py-24 scroll-mt-24"
+      className="bg-[#F8F8F8] min-h-screen lg:py-16 lg:px-10  px-4 md:px-8 sm:py-5 md:py-24 scroll-mt-24"
     >
       {/* Heading */}
       <div className="text-center mb-10 sm:mb-12 px-4 ">
