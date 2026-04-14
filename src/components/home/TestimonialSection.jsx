@@ -36,7 +36,7 @@ const detail = [
 
 export default function TestimonialSection() {
   return (
-    <section className="bg-[#F8F8F8] py-16 px-6">
+    <section className="bg-gray-100 py-16 px-6">
       {/* Heading */}
       <div className="text-center mb-12">
         <motion.h3
