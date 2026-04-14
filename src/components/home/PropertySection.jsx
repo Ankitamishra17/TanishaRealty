@@ -72,7 +72,7 @@ const fadeIn = {
 
 export default function Gallery() {
   return (
-    <div className="bg-[#F8F8F8] min-h-screen p-6 ">
+    <div className="bg-[#F8F8F8] min-h-screen p-2 ">
       <div className="text-center mb-12">
         <motion.h3
           className={`${libre.className} text-3xl md:text-4xl lg:text-5xl text-[#163250]`}

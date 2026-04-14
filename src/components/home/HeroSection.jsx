@@ -97,7 +97,7 @@ export default function HeroSection() {
             >
               <a
                 href="#service"
-                className=" bg-[#C6A240] text-black px-7 py-3 rounded-md font-semibold hover:bg-[#b8932f] transition"
+                className=" bg-[#C6A240]  text-black px-7 py-3 rounded-md font-semibold hover:bg-[#b8932f] transition"
               >
                 Explore Services →
               </a>
