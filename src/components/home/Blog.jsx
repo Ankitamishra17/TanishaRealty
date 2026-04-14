@@ -37,10 +37,10 @@ export default function BlogPage() {
   return (
     <section
       id="blog"
-      className="bg-[#F8F8F8] min-h-screen lg:py-8 lg:px-10  px-4 md:px-8 sm:py-20 md:py-24 scroll-mt-24"
+      className="bg-[#F8F8F8] min-h-screen lg:py-16 lg:px-10  px-4 md:px-8 sm:py-20 md:py-24 scroll-mt-24"
     >
       {/* Heading */}
-      <div className="text-center lg:mb-12 sm:mb-8 ">
+      <div className="text-center mb-10 sm:mb-12 px-4 ">
         <motion.h3
           className={`${libre.className} text-3xl md:text-4xl lg:text-5xl text-[#163250]  sm:mt-20`}
           initial={{ opacity: 0, y: 40 }}
