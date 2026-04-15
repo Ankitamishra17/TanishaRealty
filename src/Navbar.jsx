@@ -10,7 +10,7 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["400", "600"] });
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [isOpen, setIsOpen] = useState(false); // ✅ modal state
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,7 +49,7 @@ export default function Navbar() {
             <img
               src="/tanisha-logo.svg"
               alt="Logo"
-              className="h-14 w-auto scale-x-150 scale-y-150 origin-left"
+              className="h-14 w-auto scale-x-260 scale-y-260 origin-left"
             />
           </a>
 
@@ -71,7 +71,7 @@ export default function Navbar() {
 
           {/* RIGHT SIDE */}
           <div className={`${libre.className} flex items-center gap-3`}>
-            {/* ✅ BUTTON (OPEN MODAL) */}
+            {/*  BUTTON (OPEN MODAL) */}
             <button
               onClick={() => setIsOpen(true)}
               className="hidden sm:block text-[#163250] border border-[#C6A240] px-4 py-2 rounded-xl hover:bg-[#C6A240] hover:text-white transition"

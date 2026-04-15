@@ -142,9 +142,9 @@ export default function AboutSection() {
             whileInView="visible"
             viewport={{ once: true }}
             custom={4}
-            className="self-center md:self-start mt-8 sm:mt-10 bg-[#C6A240] text-black px-5 sm:px-7 py-2.5 sm:py-3 rounded-md font-semibold hover:bg-[#b8932f] transition text-sm sm:text-base"
+            className="self-center md:self-start mt-8 sm:mt-10 bg-[#C6A240] text-white px-5 sm:px-7 py-2.5 sm:py-3 rounded-md font-semibold hover:bg-[#b8932f] transition text-sm sm:text-base"
           >
-            Learn More
+            Learn More →
           </motion.a>
         </div>
       </div>

@@ -7,13 +7,21 @@ import { Libre_Baskerville, Poppins } from "next/font/google";
 const libre = Libre_Baskerville({ weight: "400", subsets: ["latin"] });
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "600"] });
 
-const navLinks = ["Home", "About", "Services", "Properties", "Contact"];
-const serviceLinks = [
-  "Property Buying",
-  "Property Selling",
-  "Rental Services",
-  "Property Consulting",
+const navLinks = [
+  { name: "Home", link: "#home" },
+  { name: "About", link: "#about" },
+  { name: "Service", link: "#service" },
+  { name: "Properties", link: "#properties" },
+  { name: "Contact", link: "#contact" },
 ];
+
+const serviceLinks = [
+  { name: "Property Buying", link: "#service" },
+  { name: "Property Selling", link: "#service" },
+  { name: "Rental Services", link: "#service" },
+  { name: "Property Consulting", link: "#service" },
+];
+
 const socialLinks = ["in", "tw", "ig", "yt"];
 
 export default function Footer() {
@@ -27,8 +35,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
-            {/* LOGO */}
-            <a href="/" className="inline-block ">
+            <a href="/" className="inline-block">
               <Image
                 src="/tanisha-logo.svg"
                 alt="Tanisha Logo"
@@ -40,7 +47,7 @@ export default function Footer() {
             </a>
 
             <p
-              className={`${poppins.className}text-[#163250]/70 text-sm leading-relaxed`}
+              className={`${poppins.className} text-[#163250]/70 text-sm leading-relaxed`}
             >
               Crafting refined experiences for those who appreciate the
               extraordinary in every detail.
@@ -60,17 +67,16 @@ export default function Footer() {
             >
               Navigate
             </h3>
+
             <ul className="space-y-3">
               {navLinks.map((item) => (
-                <li key={item}>
+                <li key={item.name}>
                   <a
-                    href="#"
+                    href={item.link}
                     className="text-sm text-[#163250]/70 hover:text-[#c6a240] tracking-wider uppercase flex items-center gap-2 group transition"
                   >
-                    <span
-                      className={`${poppins.className} h-px w-0 bg-[#c6a240] group-hover:w-4 transition-all duration-300`}
-                    />{" "}
-                    {item}
+                    <span className="h-px w-0 bg-[#c6a240] group-hover:w-4 transition-all duration-300" />
+                    {item.name} {/* ✅ FIXED */}
                   </a>
                 </li>
               ))}
@@ -84,24 +90,23 @@ export default function Footer() {
             >
               Services
             </h3>
+
             <ul className="space-y-3">
               {serviceLinks.map((item) => (
-                <li key={item}>
+                <li key={item.name}>
                   <a
-                    href="#"
+                    href={item.link}
                     className="text-sm text-[#163250]/70 hover:text-[#c6a240] tracking-wider uppercase flex items-center gap-2 group transition"
                   >
-                    <span
-                      className={`${poppins.className} h-px w-0 bg-[#c6a240] group-hover:w-4 transition-all duration-300`}
-                    />
-                    {item}
+                    <span className="h-px w-0 bg-[#c6a240] group-hover:w-4 transition-all duration-300" />
+                    {item.name}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact  */}
+          {/* Contact */}
           <div>
             <h3
               className={`${libre.className} text-lg font-semibold text-[#c6a240] tracking-[0.15em] uppercase mb-6`}
@@ -110,12 +115,12 @@ export default function Footer() {
             </h3>
 
             <div
-              className={`${poppins.className}  space-y-2 mb-6 text-sm text-[#163250]/70`}
+              className={`${poppins.className} space-y-2 mb-6 text-sm text-[#163250]/70`}
             >
-              <p className={`${poppins.className}`}>anisharealty01@gmail.com</p>
+              <p>anisharealty01@gmail.com</p>
               <p>+91 7428145157</p>
-              <p className={`${poppins.className}`}>
-                1818,Galaxy Diamond Plazza
+              <p>
+                1818, Galaxy Diamond Plaza
                 <br /> Greater Noida
               </p>
             </div>
@@ -158,11 +163,9 @@ export default function Footer() {
             </button>
           ))}
         </div>
-
-       
       </div>
 
-      {/* Bottom accent line */}
+      {/* Bottom accent */}
       <div className="h-px bg-gradient-to-r from-transparent via-[#c6a240] to-transparent" />
     </footer>
   );
