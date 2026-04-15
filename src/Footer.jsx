@@ -15,7 +15,7 @@ const serviceLinks = [
   "Property Consulting",
 ];
 const socialLinks = ["in", "tw", "ig", "yt"];
-const legalLinks = ["Privacy Policy", "Terms", "Cookies"];
+const legalLinks = ["Privacy Policy", "Terms"];
 
 export default function Footer() {
   return (
