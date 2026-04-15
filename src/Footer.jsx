@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
 
 import { Libre_Baskerville, Poppins } from "next/font/google";
 
@@ -115,19 +116,28 @@ export default function Footer() {
             </h3>
 
             <div
-              className={`${poppins.className}  cursor-pointer  space-y-2 mb-6 text-sm text-[#163250]/70`}
+              className={`${poppins.className} cursor-pointer space-y-4 mb-6 text-sm text-[#163250]/70`}
             >
-              <p className="hover:text-[#C6A240] transition-all">
-                anisharealty01@gmail.com
-              </p>
-                          <p className="hover:text-[#C6A240] transition-all">
+              {/* Email */}
+              <div className="flex items-center gap-3 hover:text-[#C6A240] transition-all">
+                <FiMail className="text-lg" />
+                <p>anisharealty01@gmail.com</p>
+              </div>
 
-              +91 7428145157</p>
-                           <p className="hover:text-[#C6A240] transition-all">
+              {/* Phone */}
+              <div className="flex items-center gap-3 hover:text-[#C6A240] transition-all">
+                <FiPhone className="text-lg" />
+                <p>+91 7428145157</p>
+              </div>
 
-                1818, Galaxy Diamond Plaza
-                <br /> Greater Noida
-              </p>
+              {/* Address */}
+              <div className="flex items-start gap-3 hover:text-[#C6A240] transition-all">
+                <FiMapPin className="text-lg mt-1" />
+                <p>
+                  1818, Galaxy Diamond Plaza
+                  <br /> Greater Noida
+                </p>
+              </div>
             </div>
 
             <p className="italic text-[#163250]/50 mb-3">Stay in the loop</p>
