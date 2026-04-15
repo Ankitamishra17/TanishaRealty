@@ -88,27 +88,7 @@ export default function HeroSection() {
             </motion.p>
 
             {/* BUTTONS */}
-            {/* <motion.div
-              variants={fadeIn}
-              initial="hidden"
-              animate="visible"
-              custom={3}
-              className="mt-2  lg:mt-8 flex flex-col sm:flex-row gap-4"
-            >
-              <a
-                href="#service"
-                className=" bg-[#C6A240]  text-black px-7 py-3 rounded-md font-semibold hover:bg-[#b8932f] transition"
-              >
-                Explore Services →
-              </a>
 
-              <a
-                href="#properties"
-                className="border border-white text-white px-7 py-3 rounded-md hover:bg-white hover:text-black transition"
-              >
-                Explore Properties →
-              </a>
-            </motion.div> */}
             <motion.div
               variants={fadeIn}
               initial="hidden"
@@ -132,7 +112,7 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          {/* RIGHT SIDE (EMPTY OR IMAGE PLACEHOLDER) */}
+          {/* RIGHT SIDE */}
           <div className="hidden md:block" />
         </div>
       </div>

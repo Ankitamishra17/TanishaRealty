@@ -29,7 +29,6 @@ const testimonials = [
   },
 ];
 
-// seamless loop
 const looped = [...testimonials, ...testimonials];
 
 export default function TestimonialCarousel() {

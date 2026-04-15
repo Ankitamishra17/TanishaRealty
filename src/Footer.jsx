@@ -7,21 +7,12 @@ import { Libre_Baskerville, Poppins } from "next/font/google";
 const libre = Libre_Baskerville({ weight: "400", subsets: ["latin"] });
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "600"] });
 
-const navLinks = [
-  "Home",
-  "About",
-  "Services",
-  "Portfolio",
-  "Journal",
-  "Contact",
-];
+const navLinks = ["Home", "About", "Services", "Properties", "Contact"];
 const serviceLinks = [
-  "Brand Identity",
-  "Web Design",
-  "Photography",
-  "Consulting",
-  "Strategy",
-  "Creative Direction",
+  "Property Buying",
+  "Property Selling",
+  "Rental Services",
+  "Property Consulting",
 ];
 const socialLinks = ["in", "tw", "ig", "yt"];
 const legalLinks = ["Privacy Policy", "Terms", "Cookies"];
@@ -111,7 +102,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact + Newsletter */}
+          {/* Contact  */}
           <div>
             <h3
               className={`${libre.className} text-lg font-semibold text-[#c6a240] tracking-[0.15em] uppercase mb-6`}

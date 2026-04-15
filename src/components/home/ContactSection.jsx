@@ -10,7 +10,7 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["400", "600"] });
 export default function ContactSection() {
   return (
     <section className="w-full bg-gray-100 px-4 py-8 md:py-10">
-      {/* ✅ TOP HEADING */}
+      {/* TOP HEADING */}
       <div className="text-center mb-10 md:mb-14">
         <motion.h3
           className={`${libre.className} text-3xl md:text-4xl lg:text-5xl text-[#163250]`}

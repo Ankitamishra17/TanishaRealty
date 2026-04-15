@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { Libre_Baskerville, Poppins } from "next/font/google";
 
 const libre = Libre_Baskerville({ weight: "400", subsets: ["latin"] });
-const poppins = Poppins({ subsets: ["latin"], weight: ["400", "600"] });
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
