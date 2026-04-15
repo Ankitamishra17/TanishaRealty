@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Libre_Baskerville, Poppins } from "next/font/google";
 
 const libre = Libre_Baskerville({ weight: "400", subsets: ["latin"] });
@@ -57,40 +58,19 @@ const images = [
   },
 ];
 
-const fadeIn = {
-  hidden: { opacity: 0, y: 50 },
-  visible: (i = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.2,
-      duration: 0.7,
-      ease: "easeOut",
-    },
-  }),
-};
-
 export default function Gallery() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="bg-[#F8F8F8] min-h-screen p-2 ">
+    <div className="bg-[#F8F8F8] min-h-screen p-2">
+      {/* Heading */}
       <div className="text-center mb-12">
-        <motion.h3
+        <h3
           className={`${libre.className} text-3xl md:text-4xl lg:text-5xl text-[#163250]`}
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true }}
         >
           Properties
-        </motion.h3>
-        <motion.div
-          className="w-24 h-[2px] bg-[#C6A240] mx-auto mt-4"
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          style={{ originX: 0.5 }}
-          viewport={{ once: true }}
-        />
+        </h3>
+        <div className="w-24 h-[2px] bg-[#C6A240] mx-auto mt-4" />
       </div>
 
       {/* Grid */}
@@ -98,10 +78,8 @@ export default function Gallery() {
         {images.map((item) => (
           <motion.div
             key={item.id}
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
+            onClick={() => setIsOpen(true)}
             whileHover={{ scale: 1.03 }}
-            transition={{ duration: 0.2 }}
             className={`relative overflow-hidden rounded-2xl group cursor-pointer ${item.span}`}
           >
             {/* Image */}
@@ -115,13 +93,77 @@ export default function Gallery() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
 
             {/* Content */}
-            <div className="absolute bottom-4 left-8 right-18 text-center backdrop-blur-md bg-white/10 border border-white/20 text-white rounded-xl p-3 opacity-0 group-hover:opacity-100 transition duration-500">
+            <div className="absolute bottom-4 left-4 right-4 text-center backdrop-blur-md bg-white/10 border border-white/20 text-white rounded-xl p-3 opacity-0 group-hover:opacity-100 transition duration-500">
               <p className="text-xs text-gray-300">Explore Property</p>
               <h4 className="text-lg font-semibold">{item.title}</h4>
             </div>
           </motion.div>
         ))}
       </div>
+
+      {/* Modal */}
+      <AnimatePresence>
+        {isOpen && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm"
+            onClick={() => setIsOpen(false)}
+          >
+            <motion.div
+              onClick={(e) => e.stopPropagation()}
+              initial={{ opacity: 0, scale: 0.8, y: 50 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.3 }}
+              className="bg-[#F5F3F0] w-[90%] max-w-md rounded-xl p-6 relative"
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setIsOpen(false)}
+                className="absolute top-4 right-4 text-xl"
+              >
+                ✕
+              </button>
+
+              {/* Title */}
+              <h2 className={`${libre.className} text-3xl text-center`}>
+                Enquire Now
+              </h2>
+              <p
+                className={`${libre.className} text-center text-gray-500 mt-2 mb-6`}
+              >
+                CONNECT WITH OUR TEAM
+              </p>
+
+              {/* Form */}
+              <form className={`${poppins.className} flex flex-col gap-4`}>
+                <input
+                  type="text"
+                  placeholder="Full Name"
+                  className="border-b bg-transparent outline-none p-2"
+                />
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  className="border-b bg-transparent outline-none p-2"
+                />
+                <input
+                  type="text"
+                  placeholder="Phone Number"
+                  className="border-b bg-transparent outline-none p-2"
+                />
+                <textarea
+                  placeholder="Message (Optional)"
+                  className="border-b bg-transparent outline-none p-2"
+                />
+
+                <button className="bg-[#C6A240] text-white py-3 mt-4 hover:bg-gray-800 transition">
+                  SEND ENQUIRY
+                </button>
+              </form>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

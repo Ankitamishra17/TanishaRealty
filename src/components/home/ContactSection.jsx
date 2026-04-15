@@ -10,7 +10,7 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["400", "600"] });
 export default function ContactSection() {
   return (
     <section className="w-full bg-gray-100 px-4 py-8 md:py-10">
-      {/*  TOP HEADING */}
+      {/* ✅ TOP HEADING */}
       <div className="text-center mb-10 md:mb-14">
         <motion.h3
           className={`${libre.className} text-3xl md:text-4xl lg:text-5xl text-[#163250]`}
@@ -23,7 +23,7 @@ export default function ContactSection() {
         </motion.h3>
 
         <motion.div
-          className="w-20 md:w-24 h-[2px] bg-[#C6A240] mx-auto mt-4"
+          className="w-20 md:w-24 h-[2px] bg-[#163250] mx-auto mt-4"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
@@ -109,27 +109,31 @@ export default function ContactSection() {
             className="object-cover"
           />
 
-          {/* OVERLAY */}
-          <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300">
-            {/* LET'S TALK TEXT */}
-            <h4 className="absolute bottom-28 sm:bottom-32 md:bottom-36 left-4 sm:left-6 text-[#163250] text-2xl sm:text-3xl md:text-5xl font-bold tracking-wide">
-              Let’s Talk
-            </h4>
-          </div>
+          {/* LET'S TALK TEXT */}
+          <h4
+            className="absolute 
+  bottom-20 sm:bottom-24 md:bottom-32 lg:bottom-36
+  left-4 sm:left-6 
+  text-[#163250] 
+  text-xl sm:text-2xl md:text-4xl lg:text-5xl 
+  font-bold tracking-wide z-10"
+          >
+            Let’s Talk
+          </h4>
 
-          {/* HOVER TEXT */}
+          {/* FIXED BOTTOM CONTENT */}
           <div
             className="absolute bottom-0 left-0 w-full
-            translate-y-full group-hover:translate-y-0
-            transition-all duration-500 ease-in-out
-            bg-gradient-to-t from-[#163250] via-[#163250]/90 to-transparent
-            text-white p-4 sm:p-6"
+  bg-gradient-to-t from-[#163250] via-[#163250]/80 to-transparent
+  text-white 
+  p-3 sm:p-4 md:p-5 lg:p-6
+  opacity-70 group-hover:opacity-100
+  transition-all duration-300"
           >
-            <p className="text-xs sm:text-sm md:text-base leading-relaxed">
+            <p className="text-[11px] sm:text-sm md:text-xs lg:text-base leading-snug sm:leading-relaxed">
               “Have a project in mind? We’d love to help you bring your ideas to
               life. Whether you're starting from scratch or refining an existing
-              vision, our team is here to guide you every step of the way. Let’s
-              create something impactful together.”
+              vision, our team is here to guide you every step of the way.”
             </p>
           </div>
         </motion.div>

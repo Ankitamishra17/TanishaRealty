@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { Poppins, Libre_Baskerville } from "next/font/google";
 
 const libre = Libre_Baskerville({ weight: "400", subsets: ["latin"] });
@@ -11,25 +10,21 @@ const testimonials = [
   {
     id: 1,
     name: "Rahul Sharma",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
     text: "Amazing service and very professional team. Highly recommended!",
   },
   {
     id: 2,
     name: "Shushmita Bedi",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
     text: "Great experience, the design quality is top-notch.",
   },
   {
     id: 3,
     name: "Priya Verma",
-    image: "https://randomuser.me/api/portraits/women/65.jpg",
     text: "They delivered exactly what I wanted. Fantastic work!",
   },
   {
     id: 4,
     name: "Aman Gupta",
-    image: "https://randomuser.me/api/portraits/men/12.jpg",
     text: "Very smooth process and great communication.",
   },
 ];
@@ -40,7 +35,7 @@ const looped = [...testimonials, ...testimonials];
 export default function TestimonialCarousel() {
   return (
     <section className="py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
-      {/* ================= HEADING ================= */}
+      {/* HEADING  */}
       <div className="text-center mb-10 md:mb-14">
         <motion.h3
           className={`${libre.className} text-3xl md:text-4xl lg:text-5xl text-[#163250]`}
@@ -96,13 +91,12 @@ export default function TestimonialCarousel() {
 
               {/* User */}
               <div className="flex items-center gap-3">
-                <div className="relative w-10 h-10">
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    fill
-                    className="rounded-full object-cover border-2 border-[#C6A240]"
-                  />
+                {/* Avatar (First Letter) */}
+                <div
+                  className="w-10 h-10 flex items-center justify-center rounded-full 
+                  bg-[#163250] text-white font-semibold border-2 border-[#C6A240]"
+                >
+                  {item.name.charAt(0).toUpperCase()}
                 </div>
 
                 <div>
