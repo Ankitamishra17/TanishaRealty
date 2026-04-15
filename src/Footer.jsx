@@ -122,8 +122,8 @@ export default function Footer() {
             <div
               className={`${poppins.className}  space-y-2 mb-6 text-sm text-[#163250]/70`}
             >
-              <p className={`${poppins.className}`}>hello@luxe.studio</p>
-              <p>+1 (800) 123-4567</p>
+              <p className={`${poppins.className}`}>anisharealty01@gmail.com</p>
+              <p>+91 7428145157</p>
               <p className={`${poppins.className}`}>
                 1818,Galaxy Diamond Plazza
                 <br /> Greater Noida
@@ -154,7 +154,7 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
         <p className="text-[#163250]/50">
-          © 2024 <span className="text-[#c6a240]">TANISHA</span>. All rights
+          © 2026 <span className="text-[#c6a240]">TANISHA</span>. All rights
           reserved.
         </p>
 
