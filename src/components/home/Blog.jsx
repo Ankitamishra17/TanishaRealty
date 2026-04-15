@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Poppins, Libre_Baskerville } from "next/font/google";
 
@@ -9,19 +10,19 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["400", "600"] });
 const blogs = [
   {
     id: 1,
-    title: "How Studio Living is Redefining Luxury in Noida",
+    title: "How Studio Living is Redefining Luxury in Greater Noida",
     category: "DESIGN",
     date: "April 4, 2026",
     image: "https://pvr-real-state.vercel.app/img/im2.jpeg",
-    desc: "Minimalist studio apartments along Noida Expressway are merging raw aesthetics with comfort.",
+    desc: "Minimalist studio apartments along Noida Expressway are merging raw aesthetics with comfort. These spaces focus on smart layouts, premium finishes, and seamless integration of lifestyle amenities that redefine compact luxury living.",
   },
   {
     id: 2,
-    title: "The Rise of Weekend Farmhouse Culture",
+    title: "The Rise of Contemporary Weekend Farmhouse Culture",
     category: "FARMHOUSE",
     date: "April 15, 2026",
     image: "https://pvr-real-state.vercel.app/img/im1.jpeg",
-    desc: "Farm retreats with open courtyards are redefining urban escape.",
+    desc: "Farm retreats with open courtyards are redefining urban escape. People are investing in peaceful weekend homes that combine nature, privacy, and modern design to create the perfect getaway from city chaos.",
   },
   {
     id: 3,
@@ -29,15 +30,17 @@ const blogs = [
     category: "INVESTMENT",
     date: "April 1, 2026",
     image: "https://pvr-real-state.vercel.app/img/im3.jpeg",
-    desc: "Proximity to Jewar Airport makes this the hottest corridor.",
+    desc: "Proximity to Jewar Airport makes this the hottest corridor. Rapid infrastructure development, upcoming projects, and strong ROI potential are attracting both investors and homebuyers alike.",
   },
 ];
 
 export default function BlogPage() {
+  const [expanded, setExpanded] = useState(null);
+
   return (
     <section
       id="blog"
-      className="bg-[#F8F8F8] px-4   sm:px-6 md:px-8 lg:px-10 py-10 md:py-14 lg:py-16 scroll-mt-24"
+      className="bg-[#F8F8F8] px-4 sm:px-6 md:px-8 lg:px-10 py-10 md:py-14 lg:py-16 scroll-mt-24"
     >
       {/* Heading */}
       <div className="text-center mb-8 md:mb-12 ">
@@ -63,44 +66,53 @@ export default function BlogPage() {
 
       {/* Blog Grid */}
       <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
-        {blogs.map((blog, index) => (
-          <motion.div
-            key={blog.id}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.2 }}
-            whileHover={{ scale: 1.03 }}
-            className="bg-white rounded-xl overflow-hidden shadow-md"
-          >
-            <div className="overflow-hidden">
-              <img
-                src={blog.image}
-                alt={blog.title}
-                className="w-full h-52 md:h-56 object-cover hover:scale-110 transition duration-500"
-              />
-            </div>
+        {blogs.map((blog, index) => {
+          const isOpen = expanded === blog.id;
 
-            <div className="p-4 md:p-5">
-              <div className="flex items-center gap-3 text-sm mb-3">
-                <span className="bg-[#C6A240] text-white px-2 py-1 rounded text-xs">
-                  {blog.category}
-                </span>
-                <span className="text-gray-500 text-xs">{blog.date}</span>
+          return (
+            <motion.div
+              key={blog.id}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.2 }}
+              whileHover={{ scale: 1.03 }}
+              className="bg-white rounded-xl overflow-hidden shadow-md"
+            >
+              <div className="overflow-hidden">
+                <img
+                  src={blog.image}
+                  alt={blog.title}
+                  className="w-full h-52 md:h-56 object-cover hover:scale-110 transition duration-500"
+                />
               </div>
 
-              <h2 className="text-base md:text-lg font-semibold text-[#163250] mb-2">
-                {blog.title}
-              </h2>
+              <div className="p-4 md:p-5">
+                <div className="flex items-center gap-3 text-sm mb-3">
+                  <span className="bg-[#C6A240] text-white px-2 py-1 rounded text-xs">
+                    {blog.category}
+                  </span>
+                  <span className="text-gray-500 text-xs">{blog.date}</span>
+                </div>
 
-              <p className="text-gray-600 text-sm">{blog.desc}</p>
+                <h2 className="text-base md:text-lg font-semibold text-[#163250] mb-2">
+                  {blog.title}
+                </h2>
 
-              <button className="mt-4 text-[#C6A240] font-medium hover:underline">
-                Read More →
-              </button>
-            </div>
-          </motion.div>
-        ))}
+                <p className="text-gray-600 text-sm">
+                  {isOpen ? blog.desc : blog.desc.slice(0, 90) + "..."}
+                </p>
+
+                <button
+                  onClick={() => setExpanded(isOpen ? null : blog.id)}
+                  className="mt-4 text-[#C6A240] font-medium hover:underline"
+                >
+                  {isOpen ? "Show Less ↑" : "Read More →"}
+                </button>
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );

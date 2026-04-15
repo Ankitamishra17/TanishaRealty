@@ -15,7 +15,6 @@ const serviceLinks = [
   "Property Consulting",
 ];
 const socialLinks = ["in", "tw", "ig", "yt"];
-const legalLinks = ["Privacy Policy", "Terms"];
 
 export default function Footer() {
   return (
@@ -160,17 +159,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="flex gap-4 flex-wrap justify-center">
-          {legalLinks.map((item) => (
-            <a
-              key={item}
-              href="#"
-              className="text-[#163250]/50 hover:text-[#c6a240] transition"
-            >
-              {item}
-            </a>
-          ))}
-        </div>
+       
       </div>
 
       {/* Bottom accent line */}

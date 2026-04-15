@@ -79,7 +79,7 @@ export default function TestimonialCarousel() {
               shadow-md hover:shadow-xl transition-all duration-300"
             >
               {/* Quote */}
-              <div className="text-[#C6A240] text-3xl mb-3">“</div>
+              <div className="text-[#C6A240] text-5xl mb-3">“</div>
 
               {/* Text */}
               <p

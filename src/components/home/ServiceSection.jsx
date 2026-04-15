@@ -30,7 +30,7 @@ const services = [
   {
     title: "Rental Services",
     img: "https://images.unsplash.com/photo-1572120360610-d971b9d7767c",
-    desc: "Discover rental homes that fit your lifestyle and budget.",
+    desc: "Discover rental homes that fit your lifestyle and budget perfectly today",
   },
   {
     title: "Property Consulting",
