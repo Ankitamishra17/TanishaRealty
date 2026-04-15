@@ -115,11 +115,16 @@ export default function Footer() {
             </h3>
 
             <div
-              className={`${poppins.className} space-y-2 mb-6 text-sm text-[#163250]/70`}
+              className={`${poppins.className}  cursor-pointer  space-y-2 mb-6 text-sm text-[#163250]/70`}
             >
-              <p>anisharealty01@gmail.com</p>
-              <p>+91 7428145157</p>
-              <p>
+              <p className="hover:text-[#C6A240] transition-all">
+                anisharealty01@gmail.com
+              </p>
+                          <p className="hover:text-[#C6A240] transition-all">
+
+              +91 7428145157</p>
+                           <p className="hover:text-[#C6A240] transition-all">
+
                 1818, Galaxy Diamond Plaza
                 <br /> Greater Noida
               </p>
@@ -157,7 +162,7 @@ export default function Footer() {
           {socialLinks.map((s) => (
             <button
               key={s}
-              className="w-8 h-8 border border-[#c6a240]/40 text-[#163250]/60 hover:bg-[#c6a240] hover:text-white transition"
+              className="w-8 h-8 cursor-pointer border border-[#c6a240]/40 text-[#163250]/60 hover:bg-[#c6a240] hover:text-white transition"
             >
               {s}
             </button>
