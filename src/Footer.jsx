@@ -121,7 +121,7 @@ export default function Footer() {
               {/* Email */}
               <div className="flex items-center gap-3 hover:text-[#C6A240] transition-all">
                 <FiMail className="text-lg" />
-                <p>anisharealty01@gmail.com</p>
+                <p>tnisharealty01@gmail.com</p>
               </div>
 
               {/* Phone */}
@@ -134,7 +134,7 @@ export default function Footer() {
               <div className="flex items-start gap-3 hover:text-[#C6A240] transition-all">
                 <FiMapPin className="text-lg mt-1" />
                 <p>
-                  1818, Galaxy Diamond Plaza
+                  818, Galaxy Diamond Plaza
                   <br /> Greater Noida
                 </p>
               </div>
