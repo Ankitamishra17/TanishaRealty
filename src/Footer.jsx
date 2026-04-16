@@ -121,7 +121,7 @@ export default function Footer() {
               {/* Email */}
               <div className="flex items-center gap-3 hover:text-[#C6A240] transition-all">
                 <FiMail className="text-lg" />
-                <p>tnisharealty01@gmail.com</p>
+                <p>tanisharealty01@gmail.com</p>
               </div>
 
               {/* Phone */}
